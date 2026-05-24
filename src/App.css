@@ -1,0 +1,427 @@
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.brand {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #ff4d4d, #c91818);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.brand h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.brand p {
+  margin: 0;
+  color: #9aa3af;
+  max-width: 34rem;
+}
+
+.url-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #c5cad1;
+}
+
+.url-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.url-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.65rem;
+  border: 1px solid #2a3038;
+  background: #171a21;
+  color: inherit;
+}
+
+.url-row input:focus {
+  outline: 2px solid #ff4d4d55;
+  border-color: #ff4d4d;
+}
+
+.url-row button,
+.secondary-btn {
+  padding: 0.75rem 1.1rem;
+  border: none;
+  border-radius: 0.65rem;
+  background: #ff4d4d;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.url-row button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.url-row button:not(:disabled):hover,
+.secondary-btn:hover {
+  background: #e64545;
+}
+
+.error-banner {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.65rem;
+  background: #3a1f24;
+  border: 1px solid #7a2f3a;
+  color: #ffb4b4;
+}
+
+.checklist-panel {
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: #171a21;
+  border: 1px solid #262b34;
+}
+
+.video-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.video-thumb {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.video-header h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.progress-label {
+  margin: 0;
+  color: #9aa3af;
+  font-size: 0.9rem;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.chapter-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.65rem;
+  background: #12151a;
+  border: 1px solid #232831;
+}
+
+.chapter-item.dragging {
+  opacity: 0.45;
+}
+
+.chapter-item.drag-over {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 1px #ff4d4d44;
+}
+
+.drag-handle {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+}
+
+.drag-handle:hover {
+  color: #c5cad1;
+  background: #1c2028;
+}
+
+.print-only {
+  display: none;
+}
+
+.screen-only {
+  display: block;
+}
+
+.chapter-item.done {
+  opacity: 0.72;
+}
+
+.chapter-item.done .chapter-title-input {
+  text-decoration: line-through;
+}
+
+.chapter-check {
+  display: flex;
+  cursor: pointer;
+}
+
+.chapter-check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.check-indicator {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.35rem;
+  border: 2px solid #4b5563;
+  display: grid;
+  place-items: center;
+}
+
+.chapter-check input:checked + .check-indicator {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.chapter-check input:checked + .check-indicator::after {
+  content: '✓';
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.chapter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.chapter-title-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0.1rem 0;
+}
+
+.chapter-title-input:focus {
+  outline: none;
+  border-bottom: 1px solid #ff4d4d66;
+}
+
+.chapter-time {
+  font-size: 0.8rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.chapter-time:hover {
+  text-decoration: underline;
+}
+
+.chapter-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.icon-btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #2a3038;
+  border-radius: 0.45rem;
+  background: #1c2028;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.icon-btn:hover:not(:disabled) {
+  border-color: #4b5563;
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.icon-btn.danger:hover:not(:disabled) {
+  border-color: #7a2f3a;
+  color: #ffb4b4;
+}
+
+.checklist-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.secondary-btn {
+  background: #2a3038;
+}
+
+.secondary-btn:hover {
+  background: #353c47;
+}
+
+.ghost-btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid #2a3038;
+  border-radius: 0.65rem;
+  background: transparent;
+  color: #c5cad1;
+  cursor: pointer;
+}
+
+.ghost-btn:hover {
+  border-color: #4b5563;
+}
+
+@media (max-width: 560px) {
+  .url-row {
+    flex-direction: column;
+  }
+
+  .video-header {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  :root {
+    color: #111;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  .app {
+    max-width: none;
+    padding: 0;
+  }
+
+  .checklist-panel {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #fff;
+  }
+
+  .video-header h2 {
+    font-size: 1.25rem;
+    color: #111;
+  }
+
+  .progress-label {
+    color: #444;
+  }
+
+  .video-print-url {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .chapter-list {
+    gap: 0.35rem;
+  }
+
+  .chapter-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    background: #fff;
+    cursor: default;
+    break-inside: avoid;
+  }
+
+  .chapter-item.done {
+    opacity: 1;
+  }
+
+  .chapter-check {
+    align-self: start;
+  }
+
+  .chapter-check input,
+  .check-indicator {
+    display: none !important;
+  }
+
+  .print-check {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .chapter-title-print {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .chapter-item.done .chapter-title-print {
+    text-decoration: line-through;
+    color: #666;
+  }
+
+  .chapter-time-print {
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .chapter-body {
+    gap: 0.15rem;
+  }
+}

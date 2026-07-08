@@ -20,7 +20,7 @@ function toSections(
 }
 
 function loadSavedSections(videoId: string): ChapterSection[] | null {
-  const raw = localStorage.getItem(`yt-checklist:${videoId}`)
+  const raw = sessionStorage.getItem(`yt-checklist:${videoId}`)
   if (!raw) return null
   try {
     return JSON.parse(raw) as ChapterSection[]
@@ -30,7 +30,7 @@ function loadSavedSections(videoId: string): ChapterSection[] | null {
 }
 
 function saveSections(videoId: string, sections: ChapterSection[]): void {
-  localStorage.setItem(`yt-checklist:${videoId}`, JSON.stringify(sections))
+  sessionStorage.setItem(`yt-checklist:${videoId}`, JSON.stringify(sections))
 }
 
 function App() {

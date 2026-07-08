@@ -8,7 +8,7 @@ A React app that loads **YouTube video chapters** from a URL and turns them into
 - Automatically imports official chapter markers from the video
 - Editable checklist: complete, rename, reorder, add, delete
 - Timestamps link to the correct moment on YouTube
-- Progress is saved in your browser (`localStorage`) per video
+- Progress is saved in your browser (`sessionStorage`) per video for the current tab session
 
 ## Requirements
 
@@ -44,6 +44,43 @@ Open [http://localhost:5173](http://localhost:5173). The dev script starts:
 
 - [But what is a neural network?](https://www.youtube.com/watch?v=aircAruvnKk)
 - Any long tutorial or podcast that shows chapters in the YouTube progress bar
+
+## Deploy to Vercel
+
+Vercel hosts the **frontend and API together** in one project. Checklist progress stays in the browser (`sessionStorage`) — nothing is stored on the server.
+
+### 1. Push to GitHub
+
+```bash
+git add .
+git commit -m "Prepare for Vercel deployment"
+git push origin main
+```
+
+### 2. Import the project on Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+2. Click **Add New → Project** and import this repository.
+3. Vercel should auto-detect **Vite**. Leave defaults:
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+4. **Environment variables:** none required for a same-origin deploy (`VITE_API_BASE_URL` can stay unset).
+5. Click **Deploy**.
+
+Your app will be live at `https://your-project.vercel.app`. The `/api/chapters` and `/api/health` routes are served as serverless functions from the `api/` folder.
+
+### 3. Redeploy after changes
+
+Push to `main` — Vercel redeploys automatically if the repo is connected.
+
+### Deploy from the CLI (optional)
+
+```bash
+npm i -g vercel
+vercel login
+vercel          # preview deploy
+vercel --prod   # production deploy
+```
 
 ## Deploy to GitHub Pages
 
